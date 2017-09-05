@@ -12,4 +12,4 @@
   
 # 마무리
 스펙 이외의 구현은 자유롭게 진행하시고 `스펙`에 관해 이해하지 못한 부분은 메일로 문의주세요.
-1004xlsrn@gmail.com
+ssumunity.dev@gmail.com
