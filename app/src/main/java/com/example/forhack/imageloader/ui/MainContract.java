@@ -1,13 +1,16 @@
 package com.example.forhack.imageloader.ui;
 
-interface MainContract {
+public interface MainContract {
     interface View {
-
-        void setAdapter(MainAdapter adapter);
+        void initView();
     }
 
     interface Presenter {
 
-        void setList();
+    }
+
+    interface OnDataFetchedListener {
+
+        void onDataFetched(String response);
     }
 }
