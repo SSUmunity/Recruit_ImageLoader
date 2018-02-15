@@ -5,7 +5,7 @@
 
 # 스펙
 - ListView를 RecyclerView로 바꿔서 재구현하기.
-- https://8zf20u8dg6.execute-api.ap-northeast-2.amazonaws.com/prod/forhack-simple-api 에 제공되는 Json을 읽어와 title, image, date를 보여지게 하기.
+- https://9py6g66w0m.execute-api.ap-northeast-2.amazonaws.com/prod/android-recruit 에 제공되는 Json을 읽어와 title, image, date를 보여지게 하기.
 - HTTP, Image 라이브러리는 자유.
 - 현재 Item Layout의 구조는 [ImageView  TextView]로 되어있는데 [TextView ImageView TextView]로 바꾸기. 균등하게 배치.
 - RecyclerView의 Item이 Click되었을 때 Toast로 title을 출력.
