@@ -1,5 +1,7 @@
 package com.example.forhack.imageloader.ui;
 
+import android.util.Log;
+
 import com.example.forhack.imageloader.R;
 import com.example.forhack.imageloader.model.Item;
 
@@ -27,6 +29,7 @@ class MainPresenter implements MainContract.Presenter {
         list.add(new Item(R.drawable.h, "염소"));
         list.add(new Item(R.drawable.i, "오로라"));
         list.add(new Item(R.drawable.j, "바다"));
+
         MainAdapter adapter = new MainAdapter();
         adapter.setList(list);
         mView.setAdapter(adapter);
