@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.forhack.imageloader.R;
 import com.example.forhack.imageloader.model.Item;
@@ -34,11 +35,19 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Log.d("test", "bind view holder");
-        Item item = mList.get(position);
+        final Item item = mList.get(position);
         Log.d("size", Integer.toString(mList.size()));
         holder.title.setText(item.getTitle());
         holder.date.setText(item.getDate());
         Picasso.with(context).load(item.getUrl()).fit().centerCrop().into(holder.image);
+
+        //ItemListener Setting
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, item.getTitle(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

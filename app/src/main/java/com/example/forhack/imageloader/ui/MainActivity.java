@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void setAdapter(MainAdapter adapter) {
-        Log.d("test2", "set recycler Adapter");
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         mRecyclerView.setAdapter(adapter);
