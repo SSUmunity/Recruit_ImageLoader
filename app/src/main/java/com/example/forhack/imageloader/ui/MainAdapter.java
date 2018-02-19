@@ -33,8 +33,9 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         Log.d("test", "bind view holder");
         Item item = mList.get(position);
         Log.d("size", Integer.toString(mList.size()));
-        holder.image.setBackgroundResource(item.getImageRes());
+//        holder.image.setBackgroundResource(item.getImageRes());
         holder.title.setText(item.getTitle());
+        holder.date.setText(item.getDate());
     }
 
     @Override
@@ -45,10 +46,12 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView title;
+        TextView date;
         public ViewHolder(View itemView) {
             super(itemView);
             image = (ImageView) itemView.findViewById(R.id.item_image);
             title = (TextView) itemView.findViewById(R.id.item_title);
+            date = (TextView) itemView.findViewById(R.id.item_date);
         }
 
     }
