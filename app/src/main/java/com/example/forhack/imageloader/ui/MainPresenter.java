@@ -2,7 +2,6 @@ package com.example.forhack.imageloader.ui;
 
 import android.util.Log;
 
-import com.example.forhack.imageloader.R;
 import com.example.forhack.imageloader.model.Item;
 import com.example.forhack.imageloader.service.MainService;
 

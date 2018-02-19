@@ -1,5 +1,6 @@
 package com.example.forhack.imageloader.ui;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,12 +11,13 @@ import android.widget.TextView;
 
 import com.example.forhack.imageloader.R;
 import com.example.forhack.imageloader.model.Item;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
-
+    private Context context;
     private List<Item> mList = new ArrayList<>();
 
     void setList(List<Item> list) {
@@ -24,7 +26,8 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_row, null);
+        context = parent.getContext();
+        View view = LayoutInflater.from(context).inflate(R.layout.item_list_row, null);
         return new ViewHolder(view);
     }
 
@@ -33,9 +36,9 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         Log.d("test", "bind view holder");
         Item item = mList.get(position);
         Log.d("size", Integer.toString(mList.size()));
-//        holder.image.setBackgroundResource(item.getImageRes());
         holder.title.setText(item.getTitle());
         holder.date.setText(item.getDate());
+        Picasso.with(context).load(item.getUrl()).fit().centerCrop().into(holder.image);
     }
 
     @Override
